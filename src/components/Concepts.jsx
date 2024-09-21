@@ -6,7 +6,7 @@ import ConceptList from "./ConceptList";
 //     { id: 2, description: "Socks", quantity: 12, packed: false },
 // ];
 
-export default function Concepts({ concepts, onDeleteConcept }) {
+export default function Concepts({ concepts, onDeleteConcept, onClear }) {
     return (
         <div className="list">
             <ul>
@@ -18,6 +18,7 @@ export default function Concepts({ concepts, onDeleteConcept }) {
                     />
                 ))}
             </ul>
+            <button onClick={onClear}>Clear Concepts</button>
         </div>
     );
 }

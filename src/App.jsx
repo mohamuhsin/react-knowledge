@@ -17,11 +17,19 @@ function App() {
     );
   }
 
+  function handleClearConcepts() {
+    setConcepts([]);
+  }
+
   return (
     <div className="app">
       <Header />
       <Form onAddConcept={addConcepts} />
-      <Concepts concepts={concepts} onDeleteConcept={handleDeleteConcept} />
+      <Concepts
+        concepts={concepts}
+        onDeleteConcept={handleDeleteConcept}
+        onClear={handleClearConcepts}
+      />
       <Footer concepts={concepts} />
     </div>
   );
