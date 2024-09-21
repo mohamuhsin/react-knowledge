@@ -22,7 +22,7 @@ function App() {
       <Header />
       <Form onAddConcept={addConcepts} />
       <Concepts concepts={concepts} onDeleteConcept={handleDeleteConcept} />
-      <Footer />
+      <Footer concepts={concepts} />
     </div>
   );
 }
