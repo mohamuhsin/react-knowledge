@@ -8,14 +8,20 @@ function App() {
   const [concepts, setConcepts] = useState([]);
 
   function addConcepts(concept) {
-    setConcepts((prevItems) => [...prevItems, concept]);
+    setConcepts((prevConcepts) => [...prevConcepts, concept]);
+  }
+
+  function handleDeleteConcept(id) {
+    setConcepts((prevConcepts) =>
+      prevConcepts.filter((concept) => concept.id !== id)
+    );
   }
 
   return (
     <div className="app">
       <Header />
       <Form onAddConcept={addConcepts} />
-      <Concepts concepts={concepts} />
+      <Concepts concepts={concepts} onDeleteConcept={handleDeleteConcept} />
       <Footer />
     </div>
   );
