@@ -1,17 +1,28 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-export default function Form() {
-    const [concepts, setConcepts] = useState("");
+export default function Form({ onAddConcept }) {
+    const [concept, setConcept] = useState("");
     const [percent, setPercent] = useState(1);
 
     const numbers = Array.from({ length: 100 }, (_, index) => index + 1);
 
     function handleSubmit(event) {
         event.preventDefault();
+
+        const newConcept = {
+            concept,
+            percent,
+            id: Date.now(),
+        };
+
+        onAddConcept(newConcept);
+        setConcept("");
+        setPercent(1);
     }
 
-    function handleConceptInput(event) {
-        setConcepts(event.target.value);
+    function handleConcept(event) {
+        setConcept(event.target.value);
     }
 
     function handlePercent(event) {
@@ -24,8 +35,8 @@ export default function Form() {
             <input
                 type="text"
                 placeholder="concepts..."
-                value={concepts}
-                onChange={handleConceptInput}
+                value={concept}
+                onChange={handleConcept}
             />
             <select
                 name="numbers"

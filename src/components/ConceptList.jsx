@@ -3,7 +3,7 @@ export default function ConceptList({ concept }) {
     return (
         <li>
             <span>
-                {concept.description} - {concept.quantity}%
+                {concept.concept} - {concept.percent}
             </span>
             <button>Delete</button>
         </li>
