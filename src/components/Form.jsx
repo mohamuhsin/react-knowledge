@@ -31,7 +31,7 @@ export default function Form({ onAddConcept }) {
 
     return (
         <form className="add-form" onSubmit={handleSubmit}>
-            <h3>What react concepts do you know, at what %?</h3>
+            <h3>What react concepts do you know, and at what %?</h3>
             <input
                 type="text"
                 placeholder="concept..."
