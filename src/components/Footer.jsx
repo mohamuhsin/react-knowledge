@@ -16,9 +16,9 @@ export default function Footer({ concepts }) {
     return (
         <footer className="stats">
             <em>
-                {conceptNum === 5 ? (
+                {conceptNum === 7 ? (
                     <p>
-                        You know {conceptNum} concepts, you can now build basic React app!
+                        You know {conceptNum} concepts, you can now build a basic React app!
                     </p>
                 ) : (
                     <p>
