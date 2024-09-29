@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { conceptActions } from "../store/concept-slice";
 
-export default function Form({ onAddConcept }) {
+export default function Form() {
     const [concept, setConcept] = useState("");
     const [percent, setPercent] = useState(1);
+    const dispatch = useDispatch();
 
     const numbers = Array.from({ length: 100 }, (_, index) => index + 1);
 
@@ -16,7 +19,9 @@ export default function Form({ onAddConcept }) {
             id: Date.now(),
         };
 
-        onAddConcept(newConcept);
+        dispatch(conceptActions.addConcept(newConcept));
+
+        // onAddConcept(newConcept);
         setConcept("");
         setPercent(1);
     }

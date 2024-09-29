@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const conceptSlice = createSlice({
     name: "concept",
-    initialState: { concepts: [] },
+    initialState: { concepts: [], percent: "1" },
     reducers: {
         addConcept(state, action) {
             state.concepts.push(action.payload); // Mutating state is fine with Redux Toolkit
