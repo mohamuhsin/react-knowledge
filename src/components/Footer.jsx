@@ -2,7 +2,7 @@
 export default function Footer({ concepts }) {
     const conceptNum = concepts.length;
 
-    if (!conceptNum) {
+    if (conceptNum < 5) {
         return (
             <em>
                 <p className="stats">
@@ -16,15 +16,13 @@ export default function Footer({ concepts }) {
     return (
         <footer className="stats">
             <em>
-                {conceptNum === 7 ? (
+                {conceptNum >= 5 && conceptNum <= 8 ? (
                     <p>
                         You know {conceptNum} concepts, you can now build a basic React app!
                     </p>
                 ) : (
                     <p>
-                        <p>
-                            You know {conceptNum} concepts, you can now build pro React apps!
-                        </p>
+                        You know {conceptNum} concepts, you can now build pro React apps!
                     </p>
                 )}
             </em>
