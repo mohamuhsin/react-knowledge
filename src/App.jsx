@@ -2,35 +2,31 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 import Concepts from "./components/Concepts";
-import { useState } from "react";
+// import { useState } from "react";
 
 function App() {
-  const [concepts, setConcepts] = useState([]);
+  // const [concepts, setConcepts] = useState([]);
 
-  function addConcepts(concept) {
-    setConcepts((prevConcepts) => [...prevConcepts, concept]);
-  }
+  // function addConcepts(concept) {
+  //   setConcepts((prevConcepts) => [...prevConcepts, concept]);
+  // }
 
-  function handleDeleteConcept(id) {
-    setConcepts((prevConcepts) =>
-      prevConcepts.filter((concept) => concept.id !== id)
-    );
-  }
+  // function handleDeleteConcept(id) {
+  //   setConcepts((prevConcepts) =>
+  //     prevConcepts.filter((concept) => concept.id !== id)
+  //   );
+  // }
 
-  function handleClearConcepts() {
-    setConcepts([]);
-  }
+  // function handleClearConcepts() {
+  //   setConcepts([]);
+  // }
 
   return (
     <div className="app">
       <Header />
-      <Form onAddConcept={addConcepts} />
-      <Concepts
-        concepts={concepts}
-        onDeleteConcept={handleDeleteConcept}
-        onClear={handleClearConcepts}
-      />
-      <Footer concepts={concepts} />
+      <Form />
+      <Concepts />
+      <Footer />
     </div>
   );
 }

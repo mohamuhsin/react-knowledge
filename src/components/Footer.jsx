@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
-export default function Footer({ concepts }) {
+import { useSelector } from "react-redux";
+
+export default function Footer() {
+    const concepts = useSelector((state) => state.concepts);
     const conceptNum = concepts.length;
 
     if (conceptNum < 5) {
