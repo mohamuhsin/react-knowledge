@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import ConceptList from "./ConceptList";
 import { useDispatch } from "react-redux";
 import { conceptActions } from "../store/concept-slice";

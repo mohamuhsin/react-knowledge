@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
 
 export default function Footer() {
